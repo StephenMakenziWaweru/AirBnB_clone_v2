@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-"""Deploys compressed files to webservers"""
+""" Does deployment"""
+
 from fabric.api import *
 import os
 
-# define hosts and user
-env.hosts = [
-        "34.139.26.238",
-        "18.207.4.175",
-        ]
-env.user = 'ubuntu'
+env.hosts = ["34.73.8.171", "34.74.18.52"]
+env.user = "ubuntu"
 
 
 def do_deploy(archive_path):
