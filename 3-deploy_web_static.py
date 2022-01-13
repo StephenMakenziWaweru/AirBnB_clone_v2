@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """Deploys compressed files to webservers"""
+
 from fabric.api import *
 import os
 import tarfile
 from datetime import datetime
 
-# define hosts and user
+
 env.hosts = [
         "34.139.26.238",
         "18.207.4.175",
