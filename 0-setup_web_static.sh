@@ -19,7 +19,6 @@ web="<html>
   </body>
 </html>"
 echo "$web" > /data/web_static/releases/test/index.html
-LINK=/data/web_static/current
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu:ubuntu /data/
 sed -i "/^\tlocation \/ {$/ i\\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n}" /etc/nginx/sites-available/default
