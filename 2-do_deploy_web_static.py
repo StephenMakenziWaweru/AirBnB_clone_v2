@@ -20,12 +20,12 @@ def do_deploy(archive_path):
     new_dir = "/data/web_static/releases/" + filename_ext
     put(archive_path, '/tmp/')
     run(f"mkdir -p {new_dir}")
-    run(f"tar -xzf /tmp/ {filename} -C {newdir}")
+    run(f"tar -xzf /tmp/{filename} -C {new_dir}")
     
-    run(f"rm /tmp/ {filename}")
-    run(f"mv {newdir} /web_static/* {new_dir}")
-    run(f"rm -rf {new_dir} /web_static")
-    run(f"rm -rf /data/web_static/current")
+    run(f"rm /tmp/{filename}")
+    run(f"mv {new_dir}/web_static/* {new_dir}")
+    run(f"rm -rf {new_dir}/web_static")
+    run("rm -rf /data/web_static/current")
     run(f"ln -s {new_dir} /data/web_static/current")
 
     return True
