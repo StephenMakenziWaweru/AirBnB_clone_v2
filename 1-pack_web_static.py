@@ -10,7 +10,7 @@ def do_pack():
     date = datetime.now().strftime("%Y%m%d%H%M%S")
     filename = "versions/web_static_{}.tgz".format(date)
     if not os.path.exists("versions/"):
-        os.mkdir.("versions/")
+        os.mkdir("versions/")
     with tarfile.open(filename, "w:gz") as tar:
         tar.add("web_static", arcname=os.path.basename("web_static"))
     if os.path.exists(filename):
