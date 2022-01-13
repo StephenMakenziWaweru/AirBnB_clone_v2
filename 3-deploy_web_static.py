@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+Full deployement using fabric
+"""
+
 from fabric.api import local, env, put, run
 from time import strftime
 import os.path
