@@ -10,15 +10,6 @@ env.hosts = [
         ]
 env.user = 'ubuntu'
 
-#!/usr/bin/python3
-""" Does deployment"""
-
-from fabric.api import *
-import os
-
-env.hosts = ["34.73.8.171", "34.74.18.52"]
-env.user = "ubuntu"
-
 
 def do_deploy(archive_path):
     """ Deploys archive to servers"""
