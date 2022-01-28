@@ -73,5 +73,5 @@ class FileStorage:
             pass
 
     def close(self):
-        """Thread specific storage"""
+        """Reload to deserialize JSON file objects"""
         self.reload()
