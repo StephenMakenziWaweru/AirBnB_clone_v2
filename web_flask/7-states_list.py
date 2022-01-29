@@ -13,6 +13,7 @@ def close_session(foo):
     """Closes session"""
     storage.close()
 
+
 @app.route('/states_list', strict_slashes=False)
 def states_list():
     """lists states from storage engine"""
