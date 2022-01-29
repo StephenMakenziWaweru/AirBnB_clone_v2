@@ -13,6 +13,7 @@ def close_session(cls):
     """Closes session"""
     storage.close()
 
+
 @app.route('/states', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
 def states_state(id=None):
