@@ -18,12 +18,14 @@ def close_session(cls):
 @app.route('/states/<id>', strict_slashes=False)
 def states_state(id=None):
     """lists states from storage engine"""
-    state = None
     if id:
         states = storage.all(State)
         key = 'State.' + id
         if key in states:
             state = states[key]
+        else:
+            state = None
+        states = []
     else:
         states = list(storage.all(State).values())
     return render_template('9-states.html', **locals())
