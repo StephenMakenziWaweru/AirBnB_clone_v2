@@ -38,7 +38,7 @@ class Place(BaseModel, Base):
     __tablename__ = "places"
     city_id = Column(String(60),
                      ForeignKey("cities.id", ondelete="CASCADE"),
-                     nullable=False)
+                      nullable=False)
     user_id = Column(String(60),
                      ForeignKey("users.id", ondelete="CASCADE"),
                      nullable=False)
@@ -96,5 +96,6 @@ class Place(BaseModel, Base):
         @amenities.setter
         def amenities(self, obj):
             """appends amenity id to amenity_ids"""
+            # from models import Amenity
             if type(obj) is Amenity and obj.id not in self.amenity_ids:
                 self.amenity_ids.append(obj.id)
